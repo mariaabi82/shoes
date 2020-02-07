@@ -34,3 +34,37 @@ const productos = [
     img: './img/zapato-rojo.jpg',
   },
 ];
+
+forms = document.querySelector('form');
+
+
+
+forms.onsubmit = e => {
+  e.preventDefault();
+  console.log("aqui");
+
+  // ----------- muestra el pelaje del gato elegido
+
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  let pelajeElegido = [];
+  for (let i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      pelajeElegido.push(checkboxes[i].value)
+    }
+  };
+
+     
+
+  const arrayPorPelaje = gatos.filter(gato => gato.pelaje.includes(...pelajeElegido)); // el método .includes da true o false según esté incluido el parámetro indicado entre paréntesis en el array evaluado, en este caso "gatos". pelajeElegido es el array que viene de lo que el usuario selecciona en el formulario. Como es un array, para usarlo como argumentos entre los paréntesis de .includes, se usa SPREAD, que se escribe con tres puntos delante del nombre del array, en este caso pelajeElegido.
+  console.log("dentro del filter de pelaje");
+  console.log(arrayPorPelaje);
+
+  
+
+  if (!pelajeElegido.length) {
+    alert(`Por favor seleccioná una opción`)
+  } else if (pelajeElegido.length === 1) {
+    console.log(`Elegiste la opción ${pelajeElegido[0]}`)
+  } else {
+    console.log(`Elegiste las opciones ${pelajeElegido.join(", ")}`)
+  }
