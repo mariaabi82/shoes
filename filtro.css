@@ -6,7 +6,7 @@ body {
 nav {
     height: 55px;
     padding: 10px;
-    background-color: darkgoldenrod;
+    background-color: cornflowerblue;
     display: flex;
     align-items: center;
     
@@ -23,7 +23,7 @@ button {
     height: 35px;
     width: 50px;
     color: black;
-    background-color: cornflowerblue;
+    background-color: white;
     padding: 10px;
 
 }

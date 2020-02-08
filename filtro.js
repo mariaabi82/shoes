@@ -69,7 +69,7 @@ forms.onsubmit = e => {
   console.log("aqui");
 
   const texto = document.querySelectorAll("input[type='text']");
-  
+
   let colorElegido = [];
 
 for (let i = 0; i < texto.length; i++) {
@@ -77,14 +77,14 @@ for (let i = 0; i < texto.length; i++) {
       colorElegido.push(texto)
     }
   };
-}
+
 
  const calzadoPorColor = productos.filter(productos => productos.color.includes(...colorElegido)); 
 
   console.log("dentro del filter de color");
   console.log(calzadoPorColor);
 
-
+}
 //   // ----------- filtra por color de calzado
 
 //   const texto = document.querySelectorAll("input[type='text']");
