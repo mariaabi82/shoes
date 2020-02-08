@@ -42,23 +42,25 @@ const productos = [
 
 const tarjetas = document.querySelector(".containerZapatos");
 
-tarjetas.innerHTML = '';
+ tarjetas.innerHTML = '';
 
-tarjetasZapatos = '';
+ let tarjetasZapatos = '';
 
-const zapatosMostrados = productos.forEach(producto => {
 
-  tarjetasZapatos += `
-   <article class="tarjeta">
-     <div class="imagen"> 
-      <img src="${producto.img}"> 
-      </div>
-     <div class="texto"> 
-      <h4>${producto.nombre}</h4>
-     </div>
-   </article>`
-})
+ const zapatosMostrados = productos.forEach(producto => {
 
+    tarjetasZapatos += `
+     <article class="tarjeta">
+       <div class="imagen"> 
+        <img src="${producto.img}"> 
+        </div>
+       <div class="texto"> 
+        <h4>${producto.nombre}</h4>
+       </div>
+     </article>`
+  });
+  
+tarjetas.innerHTML = tarjetasZapatos;
 
 forms = document.querySelector('form');
 
@@ -66,13 +68,23 @@ forms.onsubmit = e => {
   e.preventDefault();
   console.log("aqui");
 
-  // ******** Muestra los productos
-
-
-
-
+  const texto = document.querySelectorAll("input[type='text']");
   
+  let colorElegido = [];
+
+for (let i = 0; i < texto.length; i++) {
+    if (texto == productos.color) {
+      colorElegido.push(texto)
+    }
+  };
 }
+
+ const calzadoPorColor = productos.filter(productos => productos.color.includes(...colorElegido)); 
+
+  console.log("dentro del filter de color");
+  console.log(calzadoPorColor);
+
+
 //   // ----------- filtra por color de calzado
 
 //   const texto = document.querySelectorAll("input[type='text']");
