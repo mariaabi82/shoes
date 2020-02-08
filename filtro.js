@@ -40,6 +40,26 @@ const productos = [
   },
 ];
 
+const tarjetas = document.querySelector(".containerZapatos");
+
+tarjetas.innerHTML = '';
+
+tarjetasZapatos = '';
+
+const zapatosMostrados = productos.forEach(producto => {
+
+  tarjetasZapatos += `
+   <article class="tarjeta">
+     <div class="imagen"> 
+      <img src="${producto.img}"> 
+      </div>
+     <div class="texto"> 
+      <h4>${producto.nombre}</h4>
+     </div>
+   </article>`
+})
+
+
 forms = document.querySelector('form');
 
 forms.onsubmit = e => {
@@ -48,25 +68,10 @@ forms.onsubmit = e => {
 
   // ******** Muestra los productos
 
-  const tarjetas = document.querySelector(".containerZapatos");
-
-  tarjetas.innerHTML = '';
-
-  tarjetasZapatos = '';
 
 
-  const zapatosMostrados = arrayPorColoryTipo.forEach(producto => {
 
-    tarjetasZapatos += `
-     <article class="tarjeta">
-       <div class="imagen"> 
-        <img src="${producto.img}"> 
-        </div>
-       <div class="texto"> 
-        <h4>${producto.nombre}</h4>
-       </div>
-     </article>`
-  })
+  
 }
 //   // ----------- filtra por color de calzado
 
